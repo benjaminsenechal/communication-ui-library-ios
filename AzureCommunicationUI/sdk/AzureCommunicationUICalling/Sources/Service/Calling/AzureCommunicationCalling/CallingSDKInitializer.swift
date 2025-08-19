@@ -236,11 +236,10 @@ internal class CallingSDKInitializer: NSObject {
     }
 }
 
-
 public final class CallProxyConfig {
-    static let shared = CallProxyConfig()
+    public static let shared = CallProxyConfig()
 
-    var proxyUrl: String = ""
+    public var proxyUrl: String = ""
 
     private init() {}
 }
