@@ -229,11 +229,20 @@ internal class CallingSDKInitializer: NSObject {
         clientOptions.diagnostics = diagnostics
 
         let callNetworkOptions = CallNetworkOptions()
-        callNetworkOptions.proxyUrl = "teams.bcv.ch"
+        callNetworkOptions.proxyUrl = CallProxyConfig.shared.proxyUrl
         clientOptions.network = callNetworkOptions
         
         return CallClient(options: clientOptions)
     }
+}
+
+
+final class CallProxyConfig {
+    static let shared = CallProxyConfig()
+
+    var proxyUrl: String = ""
+
+    private init() {}
 }
 
 extension CallingSDKInitializer: CallAgentDelegate {
