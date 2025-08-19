@@ -237,7 +237,7 @@ internal class CallingSDKInitializer: NSObject {
 }
 
 
-final class CallProxyConfig {
+public final class CallProxyConfig {
     static let shared = CallProxyConfig()
 
     var proxyUrl: String = ""
