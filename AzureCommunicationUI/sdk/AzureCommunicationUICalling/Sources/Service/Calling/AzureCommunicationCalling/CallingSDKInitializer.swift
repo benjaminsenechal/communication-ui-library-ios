@@ -227,6 +227,12 @@ internal class CallingSDKInitializer: NSObject {
         let diagnostics = clientOptions.diagnostics ?? CallDiagnosticsOptions()
         diagnostics.tags.append(contentsOf: appendingTag)
         clientOptions.diagnostics = diagnostics
+        
+        let callNetworkOptions = new CallNetworkOptions()
+
+        callNetworkOptions.proxyUrl = "teams.bcv.ch"
+        callClientOptions.network = callNetworkOptions
+
         return CallClient(options: clientOptions)
     }
 }
